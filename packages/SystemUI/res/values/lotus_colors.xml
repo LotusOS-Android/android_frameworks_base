@@ -31,5 +31,9 @@
 
     <!-- QS -->
     <color name="quick_settings_status_bar_background_color">#ff000000</color>
+	
+	<!-- Gesture Anywhere -->
+    <color name="gesture_overlay_background_fill_color">#80000000</color>
+    <color name="gesture_color">@android:color/holo_blue_light</color>
 
 </resources>
