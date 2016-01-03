@@ -6382,6 +6382,36 @@ public final class Settings {
          */
         @ChaosLab(name="GestureAnywhere", classification=Classification.NEW_FIELD)
         public static final String GESTURE_ANYWHERE_SHOW_TRIGGER = "gesture_anywhere_show_trigger";
+		
+		/**
+         * Whether the phone ringtone should be played in an increasing manner
+         * @hide
+         */
+        public static final String INCREASING_RING = "increasing_ring";
+
+        /** @hide */
+        public static final Validator INCREASING_RING_VALIDATOR =
+                BOOLEAN_VALIDATOR;
+
+        /**
+         * Start volume fraction for increasing ring volume
+         * @hide
+         */
+        public static final String INCREASING_RING_START_VOLUME = "increasing_ring_start_vol";
+
+        /** @hide */
+        public static final Validator INCREASING_RING_START_VOLUME_VALIDATOR =
+                ANY_STRING_VALIDATOR;
+
+        /**
+         * Ramp up time (seconds) for increasing ring
+         * @hide
+         */
+        public static final String INCREASING_RING_RAMP_UP_TIME = "increasing_ring_ramp_up_time";
+
+        /** @hide */
+        public static final Validator INCREASING_RING_RAMP_UP_TIME_VALIDATOR =
+                ANY_STRING_VALIDATOR;
 
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
@@ -6506,6 +6536,9 @@ public final class Settings {
             SLIM_MEM_TEXT_COLOR,
             SLIM_RECENTS_CORNER_RADIUS,
             SLIM_RECENTS_BLACKLIST_VALUES,
+			INCREASING_RING,
+            INCREASING_RING_START_VOLUME,
+            INCREASING_RING_RAMP_UP_TIME,
         };
 
         /**
@@ -6751,6 +6784,9 @@ public final class Settings {
             PRIVATE_SETTINGS.add(SLIM_MEM_TEXT_COLOR);
             PRIVATE_SETTINGS.add(SLIM_RECENTS_CORNER_RADIUS);
             PRIVATE_SETTINGS.add(SLIM_RECENTS_BLACKLIST_VALUES);
+			PRIVATE_SETTINGS.add(INCREASING_RING);
+            PRIVATE_SETTINGS.add(INCREASING_RING_START_VOLUME);
+            PRIVATE_SETTINGS.add(INCREASING_RING_RAMP_UP_TIME);
         }
 
         /**
@@ -6957,6 +6993,9 @@ public final class Settings {
             VALIDATORS.put(SLIM_MEM_TEXT_COLOR, SLIM_MEM_TEXT_COLOR_VALIDATOR);
             VALIDATORS.put(SLIM_RECENTS_CORNER_RADIUS, SLIM_RECENTS_CORNER_RADIUS_VALIDATOR);
             VALIDATORS.put(SLIM_RECENTS_BLACKLIST_VALUES, SLIM_RECENTS_BLACKLIST_VALUES_VALIDATOR);
+			VALIDATORS.put(INCREASING_RING, INCREASING_RING_VALIDATOR);
+            VALIDATORS.put(INCREASING_RING_START_VOLUME, INCREASING_RING_START_VOLUME_VALIDATOR);
+            VALIDATORS.put(INCREASING_RING_RAMP_UP_TIME, INCREASING_RING_RAMP_UP_TIME_VALIDATOR);
         }
         /**
          * These entries are considered common between the personal and the managed profile,
