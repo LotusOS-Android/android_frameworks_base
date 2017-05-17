@@ -103,6 +103,7 @@ interface IStatusBarService
 
     /**
      * Custom utils
+	 * LotusOS
      */
     void toggleCameraFlash();
 }
