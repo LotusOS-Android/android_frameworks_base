@@ -245,4 +245,7 @@
 	<!-- Gaming mode -->
     <string name="notification_channel_gaming">Gaming Mode</string>
 
+    <string name="lockscreen_default">Default</string>
+    <string name="lockscreen_hidden">None</string>
+
 </resources>
