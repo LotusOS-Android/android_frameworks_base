@@ -45,8 +45,10 @@ import android.animation.AnimatorListenerAdapter;
 import android.annotation.NonNull;
 import android.annotation.Nullable;
 import android.app.ActivityManager;
+import android.app.ActivityManagerNative;
 import android.app.ActivityOptions;
 import android.app.AlarmManager;
+import android.app.IActivityManager;
 import android.app.IWallpaperManager;
 import android.app.KeyguardManager;
 import android.app.Notification;
@@ -217,6 +219,7 @@ import com.android.systemui.recents.events.activity.AppTransitionFinishedEvent;
 import com.android.systemui.recents.events.activity.UndockingTaskEvent;
 import com.android.systemui.recents.misc.SystemServicesProxy;
 import com.android.systemui.shared.system.WindowManagerWrapper;
+import com.android.systemui.slimrecent.RecentController;
 import com.android.systemui.stackdivider.Divider;
 import com.android.systemui.stackdivider.WindowManagerProxy;
 import com.android.systemui.statusbar.ActivatableNotificationView;
@@ -1687,6 +1690,18 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
             final int navbarPos = WindowManagerWrapper.getInstance().getNavBarPosition();
             if (navbarPos == NAV_BAR_POS_INVALID) {
                 return false;
+            }
+            if (mSlimRecents != null) {
+                boolean isInLockTaskMode = false;
+                try {
+                    IActivityManager activityManager = ActivityManagerNative.getDefault();
+                    if (activityManager.isInLockTaskMode()) {
+                        isInLockTaskMode = true;
+                   }
+                } catch (RemoteException e) {}
+                if (!isInLockTaskMode) {
+                    return mSlimRecents.startMultiWindow();
+                }
             }
             int createMode = navbarPos == NAV_BAR_POS_LEFT
                     ? ActivityManager.SPLIT_SCREEN_CREATE_MODE_BOTTOM_OR_RIGHT
@@ -4001,6 +4016,10 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
 
         mViewHierarchyManager.updateRowStates();
         mScreenPinningRequest.onConfigurationChanged();
+
+        if (mSlimRecents != null) {
+            mSlimRecents.onConfigurationChanged(newConfig);
+        }
     }
 
     @Override
@@ -6252,6 +6271,8 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
 
     protected RecentsComponent mRecents;
 
+    protected RecentController mSlimRecents;
+
     protected NotificationShelf mNotificationShelf;
     protected FooterView mFooterView;
     protected EmptyShadeView mEmptyShadeView;
@@ -6368,6 +6389,9 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.PULSE_APPS_BLACKLIST),
                     false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                  Settings.System.USE_SLIM_RECENTS),
+                  false, this, UserHandle.USER_ALL);
         }
 
         @Override
@@ -6436,6 +6460,9 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
             } else if (uri.equals(Settings.System.getUriFor(
                 Settings.System.STATUS_BAR_TICKER_TICK_DURATION))) {
                 updateTickerTickDuration();
+            } else if (uri.equals(Settings.System.getUriFor(
+                    Settings.System.USE_SLIM_RECENTS))) {
+                updateRecentsMode();
             }
         }
 
@@ -6457,6 +6484,7 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
             updateKeyguardStatusSettings();
             updateCorners();
             setPulseBlacklist();
+            updateRecentsMode();
         }
     }
 
@@ -7178,4 +7206,29 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
                     saveImportance.run();
                 }
             };
+
+    private void updateRecentsMode() {
+        boolean slimRecents = Settings.System.getIntForUser(mContext.getContentResolver(),
+                Settings.System.USE_SLIM_RECENTS, 0, UserHandle.USER_CURRENT) == 1;
+        if (slimRecents) {
+            mRecents.evictAllCaches();
+            mRecents.removeSbCallbacks();
+            mSlimRecents = new RecentController(mContext);
+            rebuildRecentsScreen();
+            mSlimRecents.addSbCallbacks();
+        } else {
+            mRecents.addSbCallbacks();
+            if (mSlimRecents != null) {
+                mSlimRecents.evictAllCaches();
+                mSlimRecents.removeSbCallbacks();
+                mSlimRecents = null;
+            }
+        }
+    }
+
+    private void rebuildRecentsScreen() {
+        if (mSlimRecents != null) {
+            mSlimRecents.rebuildRecentsScreen();
+        }
+    }
 }
