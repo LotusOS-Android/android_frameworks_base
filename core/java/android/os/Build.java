@@ -1002,6 +1002,19 @@ public class Build {
     public static final String FINGERPRINT = deriveFingerprint();
 
     /**
+     * LotusOS fingerprint
+     * @hide
+     */
+    public static final String PROP_LOTUS_FINGERPRINT = "ro.lotus.fingerprint";
+
+    /**
+     * LotusOS fingerprint
+     * @hide
+     */
+    public static final String LOTUS_FINGERPRINT = SystemProperties.get(PROP_LOTUS_FINGERPRINT,
+            deriveFingerprint());
+
+    /**
      * Some devices split the fingerprint components between multiple
      * partitions, so we might derive the fingerprint at runtime.
      */
