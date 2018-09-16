@@ -336,4 +336,8 @@
   <java-symbol type="string" name="gaming_notif_ticker" />
   <java-symbol type="string" name="notification_channel_gaming" />
   <java-symbol type="drawable" name="ic_gaming_notif" />
+
+    <java-symbol type="anim" name="inv_app_in" />
+    <java-symbol type="anim" name="inv_app_out" />
+
 </resources>
