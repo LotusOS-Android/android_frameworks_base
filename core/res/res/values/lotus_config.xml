@@ -310,4 +310,7 @@
 	<!-- Screen off delay -->
   <integer name="config_screen_off_delay">1000</integer>
 
+    <!-- Component name for the activity that will be presenting the Oreo's Recents UI -->
+    <string name="config_recentsComponentNameOreo" translatable="false">com.android.systemui/.recents.RecentsActivity</string>
+
 </resources>
