@@ -4931,7 +4931,12 @@ public final class Settings {
          */
         public static final String SCREENSHOT_DEFAULT_MODE = "screenshot_default_mode";
 
-        /** End of Lotus X system settings**/
+        /**
+         * @hide
+         */
+        public static final String FULL_GESTURE_NAVBAR = "full_gesture_navbar";
+
+        /** End of LotusOS system settings**/
 
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
