@@ -56,11 +56,17 @@
     <dimen name="keyguard_charging_indication_height">64dp</dimen>
     <dimen name="keyguard_charging_indication_width">32dp</dimen>
 	
-	<!-- OmniStyle -->
+    <!-- OmniStyle -->
     <dimen name="qs_header_image_offset">25dp</dimen>
     <dimen name="qs_header_image_side_margin">4dp</dimen>
     <dimen name="qs_header_image_bottom_margin">4dp</dimen>
-	<dimen name="qs_header_image_top_margin">4dp</dimen>
+    <dimen name="qs_header_image_top_margin">4dp</dimen>
+
+    <!-- Status bar notification ticker -->
+    <dimen name="ticker_start_padding">6dp</dimen>
+    <dimen name="ticker_icon_end_margin">4dp</dimen>
+    <dimen name="ticker_text_top_padding">2dp</dimen>
+    <dimen name="ticker_text_end_padding">10dp</dimen>
 
     <!-- OPA -->
     <dimen name="halo_diameter">18.0dip</dimen>
