@@ -23,7 +23,7 @@ import android.provider.Settings;
 import android.service.quicksettings.Tile;
 import android.view.WindowManager;
 
-import com.android.internal.util.evolution.EvolutionUtils;
+import com.android.internal.util.lotus.LotusUtils;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.systemui.qs.QSHost;
 import com.android.systemui.plugins.qs.QSTile.BooleanState;
@@ -48,7 +48,7 @@ public class ScreenrecordTile extends QSTileImpl<BooleanState> {
 
     @Override
     public int getMetricsCategory() {
-        return MetricsEvent.EVO;
+        return MetricsEvent.LOTUS;
     }
 
     @Override
@@ -86,7 +86,7 @@ public class ScreenrecordTile extends QSTileImpl<BooleanState> {
         try {
              Thread.sleep(1000); //1s
         } catch (InterruptedException ie) {}
-        EvolutionUtils.takeScreenrecord(mMode);
+        LotusUtils.takeScreenrecord(mMode);
     }
 
     @Override
@@ -101,16 +101,12 @@ public class ScreenrecordTile extends QSTileImpl<BooleanState> {
 
     @Override
     protected void handleUpdateState(BooleanState state, Object arg) {
-        state.contentDescription =  mContext.getString(
-                R.string.quick_settings_screenrecord_label);
+        state.label = mContext.getString(R.string.quick_settings_screenrecord_label);
         if (mMode == SCREEN_RECORD_LOW_QUALITY) {
-            state.label = mContext.getString(R.string.quick_settings_screenrecord_lq_label);
             state.icon = ResourceIcon.get(R.drawable.ic_qs_screenrecord_lq);
         } else if (mMode == SCREEN_RECORD_MID_QUALITY) {
-            state.label = mContext.getString(R.string.quick_settings_screenrecord_mq_label);
             state.icon = ResourceIcon.get(R.drawable.ic_qs_screenrecord_mq);
         } else if (mMode == SCREEN_RECORD_HIGH_QUALITY) {
-            state.label = mContext.getString(R.string.quick_settings_screenrecord_hq_label);
             state.icon = ResourceIcon.get(R.drawable.ic_qs_screenrecord_hq);
         }
     }
