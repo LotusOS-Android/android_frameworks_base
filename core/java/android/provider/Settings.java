@@ -5491,8 +5491,13 @@ public final class Settings {
          * @hide
          */
         public static final String QS_TILE_STYLE = "qs_tile_style";
+		
+		/**
+         * @hide
+         */
+        public static final String QS_HEADER_STYLE = "qs_header_style";
 
-        /** End of Evolution X system settings**/
+        /** End of LotusOS settings**/
 
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
@@ -5776,6 +5781,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(QS_PANEL_BG_ALPHA);
             PRIVATE_SETTINGS.add(HIDE_LOCKSCREEN_STATUS_BAR);
             PRIVATE_SETTINGS.add(QS_TILE_STYLE);
+			PRIVATE_SETTINGS.add(QS_HEADER_STYLE);
         }
 
         /**
