@@ -69,6 +69,7 @@ public class KeyguardStatusView extends GridLayout implements
     private static final String TAG = "KeyguardStatusView";
     private static final int MARQUEE_DELAY_MS = 2000;
 
+
     private final LockPatternUtils mLockPatternUtils;
     private final IActivityManager mIActivityManager;
     private final float mSmallClockScale;
@@ -250,7 +251,6 @@ public class KeyguardStatusView extends GridLayout implements
         boolean smallClock = mKeyguardSlice.hasHeader() || mPulsing;
         prepareSmallView(smallClock);
         float clockScale = smallClock ? mSmallClockScale : 1;
-
         RelativeLayout.LayoutParams layoutParams =
                 (RelativeLayout.LayoutParams) mClockView.getLayoutParams();
         int height = mClockView.getHeight();
