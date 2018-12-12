@@ -1371,13 +1371,13 @@ public class KeyguardUpdateMonitor implements TrustManager.TrustListener,
             return (mKeyguardIsVisible || mBouncer || shouldListenForFingerprintAssistant() ||
                     (mKeyguardOccluded && mIsDreaming)) && mDeviceInteractive && !mGoingToSleep
                     && !mSwitchingUser && !isFingerprintDisabled(getCurrentUser())
-                    && !mKeyguardGoingAway && !mIsDeviceInPocket;
+                    && !mKeyguardGoingAway;
         } else {
             return (mKeyguardIsVisible || !mDeviceInteractive ||
                     (mBouncer && !mKeyguardGoingAway) || mGoingToSleep ||
                     shouldListenForFingerprintAssistant() || (mKeyguardOccluded && mIsDreaming))
                     && !mSwitchingUser && !isFingerprintDisabled(getCurrentUser())
-                    && !mKeyguardGoingAway && !mIsDeviceInPocket;
+                    && !mKeyguardGoingAway;
         }
     }
 
