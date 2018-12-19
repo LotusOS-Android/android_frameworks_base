@@ -89,7 +89,6 @@ include $(CLEAR_VARS)
 
 LOCAL_MODULE := fonts.xml
 LOCAL_MODULE_CLASS := ETC
-
 ifeq ($(EXCLUDE_SERIF_FONTS),true)
 AOSP_FONTS_FILE := frameworks/base/data/fonts/exclude_serif/fonts.xml
 else
