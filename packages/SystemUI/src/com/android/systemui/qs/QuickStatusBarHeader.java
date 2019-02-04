@@ -351,9 +351,6 @@ public class QuickStatusBarHeader extends RelativeLayout implements
         int topMargin = resources.getDimensionPixelSize(
                 com.android.internal.R.dimen.quick_qs_offset_height) + (mHeaderImageEnabled ?
                 resources.getDimensionPixelSize(R.dimen.qs_header_image_offset) : 0);
-				
-		int statusBarBottomMargin = resources.getDimensionPixelSize(
-                R.dimen.qs_header_image_bottom_margin);
 
         mSystemIconsView.getLayoutParams().height = topMargin;
         mSystemIconsView.setLayoutParams(mSystemIconsView.getLayoutParams());
@@ -368,9 +365,6 @@ public class QuickStatusBarHeader extends RelativeLayout implements
             if (mHeaderImageEnabled) {
                 qsHeight += resources.getDimensionPixelSize(R.dimen.qs_header_image_offset);
             }
-			
-			// always add the margin below the statusbar with or without image
-            qsHeight += statusBarBottomMargin;
 
             lp.height = Math.max(getMinimumHeight(), qsHeight);
 			
