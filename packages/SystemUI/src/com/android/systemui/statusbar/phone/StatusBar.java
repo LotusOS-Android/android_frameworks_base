@@ -1482,9 +1482,6 @@ public class StatusBar extends SystemUI implements DemoMode, TunerService.Tunabl
             mMetricsLogger.action(MetricsEvent.ACTION_DISMISS_ALL_NOTES);
             clearAllNotifications();
         });
-        mFooterView.setManageButtonClickListener(v -> {
-            manageNotifications();
-        });
         mStackScroller.setFooterView(mFooterView);
     }
 

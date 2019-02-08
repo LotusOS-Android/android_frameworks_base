@@ -28,22 +28,13 @@
         android:layout_height="wrap_content" >
         <com.android.systemui.statusbar.FooterViewButton
             style="@android:style/Widget.Material.Button.Borderless"
-            android:id="@+id/manage_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start"
+            android:id="@+id/dismiss_x"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
             android:focusable="true"
-            android:text="@string/manage_notifications_text"
-            android:textColor="?attr/wallpaperTextColor"/>
-        <com.android.systemui.statusbar.FooterViewButton
-            style="@android:style/Widget.Material.Button.Borderless"
-            android:id="@+id/dismiss_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:focusable="true"
-            android:contentDescription="@string/accessibility_clear_all"
-            android:text="@string/clear_all_notifications_text"
-            android:textColor="?attr/wallpaperTextColor"/>
+            android:background="@drawable/clear_notif"
+	    android:layout_centerHorizontal="true"
+	    android:layout_alignParentBottom="true"
+	    android:layout_width="40dp"/>
     </com.android.systemui.statusbar.AlphaOptimizedFrameLayout>
 </com.android.systemui.statusbar.FooterView>
