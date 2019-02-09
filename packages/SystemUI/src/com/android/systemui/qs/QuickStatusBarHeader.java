@@ -72,6 +72,8 @@ import com.android.systemui.statusbar.policy.ZenModeController;
 import com.android.systemui.tuner.TunerService;
 import com.android.systemui.tuner.TunerService.Tunable;
 
+import com.android.systemui.statusbar.policy.NetworkTraffic;
+
 import java.util.Locale;
 import java.util.Objects;
 
@@ -140,6 +142,9 @@ public class QuickStatusBarHeader extends RelativeLayout implements
     // custom headers
     private boolean mLandscape;
     private boolean mHeaderImageEnabled;
+	
+	// Statusbar Traffic
+    private NetworkTraffic mTraffic;
 
     private class HeaderSettingsObserver extends ContentObserver {
         HeaderSettingsObserver(Handler handler) {
@@ -242,6 +247,7 @@ public class QuickStatusBarHeader extends RelativeLayout implements
         mClockView = findViewById(R.id.clock);
         mClockView.setOnClickListener(this);
         mDateView = findViewById(R.id.date);
+		mTraffic = findViewById(R.id.networkTraffic);
         updateSettings();
     }
 
@@ -726,5 +732,6 @@ public class QuickStatusBarHeader extends RelativeLayout implements
     private void updateStatusbarProperties() {
         boolean shouldUseWallpaperTextColor = mLandscape && !mHeaderImageEnabled;
         mClockView.useWallpaperTextColor(shouldUseWallpaperTextColor);
+		mTraffic.useWallpaperTextColor(shouldUseWallpaperTextColor);
     }
 }
