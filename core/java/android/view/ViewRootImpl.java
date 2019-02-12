@@ -178,6 +178,9 @@ public final class ViewRootImpl implements ViewParent,
     public static final String PROPERTY_EMULATOR_WIN_OUTSET_BOTTOM_PX =
             "ro.emu.win_outset_bottom_px";
 
+    private final int mSwipeStartThreshold =
+                    SystemProperties.getInt("ro.bottom_gesture.swipe_start.threshold", 20);
+      
     private final boolean SCROLL_BOOST_SS_ENABLE =
                     SystemProperties.getBoolean("vendor.perf.gestureflingboost.enable", false);
 
@@ -5194,10 +5197,10 @@ public final class ViewRootImpl implements ViewParent,
                                 raw = event.getRawY();
                             }
                             if (rotation == 0 || rotation == 1) {
-                                mGestureButtonZone = mScreenHeight - 20;
+                                mGestureButtonZone = mScreenHeight - mSwipeStartThreshold;
                                 hit = raw > ((float) mGestureButtonZone);
                             } else {
-                                mGestureButtonZone = 20;
+                                mGestureButtonZone = mSwipeStartThreshold;
                                 hit = raw < ((float) mGestureButtonZone);
                             }
                             if (hit) {
