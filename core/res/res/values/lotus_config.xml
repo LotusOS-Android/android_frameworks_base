@@ -315,4 +315,7 @@
          Used to decide if we show pulse settings -->
     <bool name="config_ledCanPulse">true</bool>
 
+    <!-- Whether to enable oneplus cam hack -->
+    <bool name="config_enableOPcamhack">false</bool>
+
 </resources>
