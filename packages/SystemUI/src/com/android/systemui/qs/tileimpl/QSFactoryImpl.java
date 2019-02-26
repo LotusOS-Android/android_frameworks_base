@@ -47,6 +47,10 @@ import com.android.systemui.qs.tiles.LocationTile;
 import com.android.systemui.qs.tiles.MusicTile;
 import com.android.systemui.qs.tiles.NfcTile;
 import com.android.systemui.qs.tiles.NightDisplayTile;
+<<<<<<< HEAD
+=======
+import com.android.systemui.qs.tiles.OneHandTile;
+>>>>>>> ce3eb08e78a... SystemUI: OneHandMode QS tile
 import com.android.systemui.qs.tiles.ReadingModeTile;
 import com.android.systemui.qs.tiles.RebootTile;
 import com.android.systemui.qs.tiles.RotationLockTile;
@@ -128,7 +132,6 @@ public class QSFactoryImpl implements QSFactory {
                 return new ReadingModeTile(mHost);
             case "sync":
                 return new SyncTile(mHost);
-            // Evolution X tiles.
             case "screenshot":
                 return new ScreenshotTile(mHost);
             case "screenrecord":
@@ -155,6 +158,8 @@ public class QSFactoryImpl implements QSFactory {
                 return new CompassTile(mHost);
             case "ambient_display":
                 return new AmbientDisplayTile(mHost);
+            case "onehand":
+                return new OneHandTile(mHost);
         }
 
         // Intent tiles.

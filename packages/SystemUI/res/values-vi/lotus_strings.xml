@@ -203,4 +203,6 @@
     <!-- [CHAR LIMIT=130] Location detail panel, description for sensors only mode -->
     <string name="quick_settings_location_detail_mode_sensors_only_description">Sử dụng GPS để xác định vị trí của bạn</string>
 
+    <!-- OneHand mode QS tile -->
+    <string name="qs_onehand_label">Chế độ một tay</string>
 </resources>
