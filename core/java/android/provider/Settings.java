@@ -6304,6 +6304,18 @@ public final class Settings {
         public static final String HEADSET_CONNECT_PLAYER = "headset_connect_player";
 
         /**
+         * Battery Estimate
+         * @hide
+         */
+        public static final String SHOW_BATTERY_ESTIMATE = "show_battery_estimate";
+
+        /**
+         * Battery Estimate Position
+         * @hide
+         */
+        public static final String BATTERY_ESTIMATE_POSITION = "battery_estimate_position";
+
+        /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
          *
