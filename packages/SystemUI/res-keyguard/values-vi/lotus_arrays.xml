@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string-array name="type_clock_hours">
+        <item>Mười hai</item>
+        <item>Một</item>
+        <item>Hai</item>
+        <item>Ba</item>
+        <item>Bốn</item>
+        <item>Năm</item>
+        <item>Sáu</item>
+        <item>Bảy</item>
+        <item>Tám</item>
+        <item>Chín</item>
+        <item>Mười</item>
+        <item>Mười một</item>
+    </string-array>
+	<string-array name="type_clock_minutes">
+        <item>O’Clock</item>
+        <item>O’Một</item>
+        <item>O’Hai</item>
+        <item>O’Ba</item>
+        <item>O’Bốn</item>
+        <item>O’Năm</item>
+        <item>O’Sáu</item>
+        <item>O’Bảy</item>
+        <item>O’Tám</item>
+        <item>O’Chín</item>
+        <item>Mười</item>
+        <item>Mười Một</item>
+        <item>Mười Hai</item>
+        <item>Mười Ba</item>
+        <item>Mười Bốn</item>
+        <item>Mười Năm</item>
+        <item>Mười Sáu</item>
+        <item>Mười Bảy</item>
+        <item>Mười Tám</item>
+        <item>Mười Chín</item>
+        <item>Hai Mươi</item>
+        <item>"Hai Một"</item>
+        <item>"Hai Hai"</item>
+        <item>"Hai Ba"</item>
+        <item>"Hai Bốn"</item>
+        <item>"Hai Năm"</item>
+        <item>"Hai Sáu"</item>
+        <item>"Hai Bảy"</item>
+        <item>"Hai Tám"</item>
+        <item>"Hai Chín"</item>
+        <item>Ba Mươi</item>
+        <item>"Ba Một"</item>
+        <item>"Ba Hai"</item>
+        <item>"Ba Ba"</item>
+        <item>"Ba Bốn"</item>
+        <item>"Ba Năm"</item>
+        <item>"Ba Sáu"</item>
+        <item>"Ba Bảy"</item>
+        <item>"Ba Tám"</item>
+        <item>"Ba Chín"</item>
+        <item>Bốn Mươi</item>
+        <item>"Bốn Một"</item>
+        <item>"Bốn Hai"</item>
+        <item>"Bốn Ba"</item>
+        <item>"Bốn Bốn"</item>
+        <item>"Bốn Năm"</item>
+        <item>"Bốn Sáu"</item>
+        <item>"Bốn Bảy"</item>
+        <item>"Bốn Tám"</item>
+        <item>"Bốn Chín"</item>
+        <item>Năm Mươi</item>
+        <item>"Năm Một"</item>
+        <item>"Năm Hai"</item>
+        <item>"Năm Ba"</item>
+        <item>"Năm Bốn"</item>
+        <item>"Năm Năm"</item>
+        <item>"Năm Sáu"</item>
+        <item>"Năm Bảy"</item>
+        <item>"Năm Tám"</item>
+        <item>"Năm Chín"</item>
+    </string-array>
+</resources>
