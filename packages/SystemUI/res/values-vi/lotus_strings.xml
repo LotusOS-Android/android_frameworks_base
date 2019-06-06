@@ -134,11 +134,13 @@
     <!-- Gaming Mode -->
     <string name="gaming_mode_tile_title">Chế độ chơi game</string>
     <string name="gaming_mode_tile_toast">Chế độ chơi game được bật</string>
-    <string name="gaming_mode_tile_toast_disabled">Chế độ chơi game đã tắt</string>
     <string name="gaming_mode_dialog_title">Chế độ chơi game</string>
-    <string name="gaming_mode_dialog_message">Khi Chế độ Trò chơi được bật, mọi thông báo nổi sẽ bị ẩn và các phím cứng sẽ bị vô hiệu hoá. Mọi thứ sẽ được đặt lại mặc định khi bạn tắt Chế độ Trò chơi.</string>
+    <string name="gaming_mode_dialog_message">Khi Chế độ Trò chơi được bật, mọi thông báo nổi sẽ bị ẩn và các phím cứng sẽ bị vô hiệu hoá. Mọi thứ sẽ được đặt lại mặc định khi bạn tắt Chế độ Trò chơi</string>
     <string name="accessibility_quick_settings_gaming_mode_on">Chế độ chơi game bật</string>
     <string name="accessibility_quick_settings_gaming_mode_off">Chế độ chơi game tắt</string>
+    <string name="gaming_notif_title">Chế độ chơi game bật</string>
+    <string name="gaming_notif_ticker">Chế độ chơi game được bật</string>
+    <string name="notification_channel_gaming">Chế độ chơi game</string>
     <!-- Music tile -->
     <string name="quick_settings_music_label">Âm thanh</string>
     <string name="quick_settings_music_play">Phát</string>

@@ -6265,7 +6265,7 @@ public final class Settings {
          *
          * @hide
          */
-        public static final Map<String, Validator> VALIDATORS = new ArrayMap<>();
+		 public static final Map<String, Validator> VALIDATORS = new ArrayMap<>();
         static {
             VALIDATORS.put(STAY_ON_WHILE_PLUGGED_IN, STAY_ON_WHILE_PLUGGED_IN_VALIDATOR);
             VALIDATORS.put(END_BUTTON_BEHAVIOR, END_BUTTON_BEHAVIOR_VALIDATOR);
@@ -6440,7 +6440,6 @@ public final class Settings {
             VALIDATORS.put(QS_PANEL_BG_USE_WALL, QS_PANEL_BG_USE_WALL_VALIDATOR);
             VALIDATORS.put(QS_PANEL_BG_USE_FW, QS_PANEL_BG_USE_FW_VALIDATOR);
         }
-
         /**
          * These entries are considered common between the personal and the managed profile,
          * since the managed profile doesn't get to change them.
@@ -10093,6 +10092,12 @@ public final class Settings {
         public static final String VOLUME_LINK_NOTIFICATION = "volume_link_notification";
 
         private static final Validator VOLUME_LINK_NOTIFICATION_VALIDATOR = BOOLEAN_VALIDATOR;
+
+        /**
+         * Save hardware buttons toggle state.
+         * @hide
+         */
+        public static final String GAMING_HARDWARE_KEYS_DISABLE = "gaming_hardware_keys_disable";
 
         /**
          * This are the settings to be backed up.
@@ -13890,6 +13895,14 @@ public final class Settings {
          */
         public static final String HEADS_UP_NOTIFICATIONS_ENABLED =
                 "heads_up_notifications_enabled";
+
+        /**
+         * Save user defined heads up toggle state.
+         *
+         * @hide
+         */
+        public static final String GAMING_HEADS_UP_NOTIFICATIONS_ENABLED =
+                "gaming_heads_up_notifications_enabled";
 
         /** @hide */ public static final int HEADS_UP_OFF = 0;
         /** @hide */ public static final int HEADS_UP_ON = 1;

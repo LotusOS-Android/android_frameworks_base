@@ -63,4 +63,9 @@
     <string name="animation_grow_shrink_left">Lớn lên (Trái)</string>
     <string name="animation_grow_shrink_right">Lớn lên (Phải)</string>
     <string name="action_null">Trống</string>
+	
+	<!-- FireHound Gaming -->
+    <string name="notification_channel_gaming">Chế Độ Chơi Game</string>
+    <string name="gaming_notif_title">Chơi Game được bật</string>
+    <string name="gaming_notif_ticker">Chế Độ Chơi Game đã bật</string>
 </resources>
