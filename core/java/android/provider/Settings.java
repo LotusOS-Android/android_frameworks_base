@@ -5502,7 +5502,12 @@ public final class Settings {
          */
         public static final String SWITCH_STYLE = "switch_style";
 
-        /** End of LotusOS settings**/
+        /**
+         * @hide
+         */
+        public static final String SHOW_BATTERY_ESTIMATE = "show_battery_estimate";
+
+        /** End of LotusOS system settings**/
 
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
