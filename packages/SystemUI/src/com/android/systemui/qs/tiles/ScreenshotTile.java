@@ -21,7 +21,7 @@ import android.os.UserHandle;
 import android.provider.Settings;
 import android.service.quicksettings.Tile;
 
-import com.android.internal.util.evolution.EvolutionUtils;
+import com.android.internal.util.lotus.LotusUtils;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.systemui.qs.QSHost;
 import com.android.systemui.plugins.qs.QSTile.BooleanState;
@@ -37,11 +37,16 @@ public class ScreenshotTile extends QSTileImpl<BooleanState> {
         super(host);
         mRegion = Settings.System.getIntForUser(mContext.getContentResolver(),
                 Settings.System.SCREENSHOT_DEFAULT_MODE, 0, UserHandle.USER_CURRENT) == 1;
+
+    private boolean mRegion = false;
+
+    public ScreenshotTile(QSHost host) {
+        super(host);
     }
 
     @Override
     public int getMetricsCategory() {
-        return MetricsEvent.EVO;
+        return MetricsEvent.LOTUS;
     }
 
     @Override
@@ -69,7 +74,7 @@ public class ScreenshotTile extends QSTileImpl<BooleanState> {
         try {
              Thread.sleep(1000); //1s
         } catch (InterruptedException ie) {}
-        EvolutionUtils.takeScreenshot(mRegion ? false : true);
+        LotusUtils.takeScreenshot(mRegion ? false : true);
     }
 
     @Override
