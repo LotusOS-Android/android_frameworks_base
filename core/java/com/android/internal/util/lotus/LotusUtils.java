@@ -73,7 +73,7 @@ public class LotusUtils {
     private static IStatusBarService mStatusBarService = null;
 
     private static IStatusBarService getStatusBarService() {
-        synchronized (EvolutionUtils.class) {
+        synchronized (LotusUtils.class) {
             if (mStatusBarService == null) {
                 mStatusBarService = IStatusBarService.Stub.asInterface(
                         ServiceManager.getService("statusbar"));
@@ -291,31 +291,6 @@ public class LotusUtils {
         InputManager.getInstance().injectInputEvent(ev,
                 InputManager.INJECT_INPUT_EVENT_MODE_ASYNC);
     }
-
-    private static final class FireActions {
-        private static IStatusBarService mStatusBarService = null;
-        private static IStatusBarService getStatusBarService() {
-            synchronized (FireActions.class) {
-                if (mStatusBarService == null) {
-                    mStatusBarService = IStatusBarService.Stub.asInterface(
-                            ServiceManager.getService("statusbar"));
-                }
-                return mStatusBarService;
-            }
-        }
-
-        public static void toggleCameraFlash() {
-            IStatusBarService service = getStatusBarService();
-            if (service != null) {
-                try {
-                    service.toggleCameraFlash();
-                } catch (RemoteException e) {
-                    // do nothing.
-                }
-            }
-        }
-    }
-} 
 
     public static ActivityInfo getRunningActivityInfo(Context context) {
         final ActivityManager am = (ActivityManager) context
