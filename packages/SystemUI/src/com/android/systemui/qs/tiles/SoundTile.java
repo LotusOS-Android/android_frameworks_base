@@ -148,6 +148,6 @@ public class SoundTile extends QSTileImpl<BooleanState> {
 
     @Override
     public int getMetricsCategory() {
-        return MetricsEvent.EVO;
+        return MetricsEvent.LOTUS;
     }
 }

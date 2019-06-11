@@ -61,7 +61,7 @@ import com.android.systemui.plugins.statusbar.phone.NavGesture.GestureHelper;
 import com.android.systemui.shared.recents.IOverviewProxy;
 import com.android.systemui.shared.recents.utilities.Utilities;
 import com.android.systemui.shared.system.NavigationBarCompat;
-import com.android.internal.util.evolution.EvolutionUtils;
+import com.android.internal.util.lotus.LotusUtils;
 
 /**
  * Class to detect gestures on the navigation bar and implement quick scrub.
@@ -271,7 +271,7 @@ public class QuickStepController implements GestureHelper {
                     boolean isDoubleTapReally = deltaX * deltaX + deltaY * deltaY < sDoubleTapSquare;
                     if (isDoubleTapReally) {
                         mNavigationBarView.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY);
-                        EvolutionUtils.switchScreenOff(mContext);
+                        LotusUtils.switchScreenOff(mContext);
                     }
                 } else {
                     // this is the first tap, let's go further and schedule a
@@ -402,7 +402,7 @@ public class QuickStepController implements GestureHelper {
                     if (mBackActionScheduled) {
                         endQuickScrub(true /* animate */);
                         mNavigationBarView.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY);
-                        EvolutionUtils.sendKeycode(KeyEvent.KEYCODE_BACK, mHandler);
+                        LotusUtils.sendKeycode(KeyEvent.KEYCODE_BACK, mHandler);
                     } else {
                         endQuickScrub(true /* animate */);
                     }
@@ -430,7 +430,7 @@ public class QuickStepController implements GestureHelper {
             // it was a single tap, let's trigger the home button action
             mHandler.removeCallbacksAndMessages(null);
             mNavigationBarView.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY);
-            EvolutionUtils.sendKeycode(KeyEvent.KEYCODE_HOME, mHandler);
+            LotusUtils.sendKeycode(KeyEvent.KEYCODE_HOME, mHandler);
         }
     };
 
@@ -461,8 +461,8 @@ public class QuickStepController implements GestureHelper {
                 moveKbCursor(right, false);
             }
         };
-        EvolutionUtils.moveKbCursor(KeyEvent.ACTION_UP, right);
-        EvolutionUtils.moveKbCursor(KeyEvent.ACTION_DOWN, right);
+        LotusUtils.moveKbCursor(KeyEvent.ACTION_UP, right);
+        LotusUtils.moveKbCursor(KeyEvent.ACTION_DOWN, right);
         mHandler.postDelayed(r, firstTrigger ? 500 : 250);
     }
 
