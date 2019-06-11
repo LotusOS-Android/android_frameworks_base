@@ -296,7 +296,7 @@ import com.android.internal.statusbar.IStatusBarService;
 import com.android.internal.util.ArrayUtils;
 import com.android.internal.util.ScreenshotHelper;
 import com.android.internal.util.ScreenShapeHelper;
-import com.android.internal.util.evolution.EvolutionUtils;
+import com.android.internal.util.lotus.LotusUtils;
 import com.android.internal.widget.PointerLocationView;
 import com.android.server.GestureLauncherService;
 import com.android.server.LocalServices;
@@ -9676,13 +9676,13 @@ public class PhoneWindowManager implements WindowManagerPolicy {
     public void sendCustomAction(Intent intent) {
         String action = intent.getAction();
         if (action != null) {
-            if (EvolutionUtils.INTENT_SCREENSHOT.equals(action)) {
+            if (LotusUtils.INTENT_SCREENSHOT.equals(action)) {
                 mContext.enforceCallingOrSelfPermission(ACCESS_SURFACE_FLINGER,
                         TAG + "sendCustomAction permission denied");
                 mHandler.removeCallbacks(mScreenshotRunnable);
                 mScreenshotRunnable.setScreenshotType(TAKE_SCREENSHOT_FULLSCREEN);
                 mHandler.post(mScreenshotRunnable);
-            } else if (EvolutionUtils.INTENT_REGION_SCREENSHOT.equals(action)) {
+            } else if (LotusUtils.INTENT_REGION_SCREENSHOT.equals(action)) {
                 mContext.enforceCallingOrSelfPermission(ACCESS_SURFACE_FLINGER,
                         TAG + "sendCustomAction permission denied");
                 mHandler.removeCallbacks(mScreenshotRunnable);
