@@ -242,7 +242,7 @@
     <string name="accessibility_quick_settings_cpuinfo_changed_off">CPU Info turned off</string>
     <string name="accessibility_quick_settings_cpuinfo_changed_on">CPU Info turned on</string>
 	
-	<!-- FireHound Gaming -->
+	<!-- Gaming mode -->
     <string name="notification_channel_gaming">Gaming Mode</string>
 
 </resources>
