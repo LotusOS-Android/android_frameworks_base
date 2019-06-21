@@ -205,4 +205,11 @@
 
     <!-- OneHand mode QS tile -->
     <string name="qs_onehand_label">Chế độ một tay</string>
+	
+	<!-- CPUInfo tile -->
+    <string name="quick_settings_cpuinfo_label">Thông tin CPU</string>
+    <string name="accessibility_quick_settings_cpuinfo_off">Thông tin CPU tắt</string>
+    <string name="accessibility_quick_settings_cpuinfo_on">Thông tin về CPU bật</string>
+    <string name="accessibility_quick_settings_cpuinfo_changed_off">Thông tin CPU đã tắt</string>
+    <string name="accessibility_quick_settings_cpuinfo_changed_on">Thông tin CPU đã bật</string>
 </resources>

@@ -34,6 +34,7 @@ import com.android.systemui.qs.tiles.CastTile;
 import com.android.systemui.qs.tiles.CellularTile;
 import com.android.systemui.qs.tiles.CompassTile;
 import com.android.systemui.qs.tiles.ColorInversionTile;
+import com.android.systemui.qs.tiles.CPUInfoTile;
 import com.android.systemui.qs.tiles.DataSaverTile;
 import com.android.systemui.qs.tiles.DndTile;
 import com.android.systemui.qs.tiles.FlashlightTile;
@@ -47,10 +48,7 @@ import com.android.systemui.qs.tiles.LocationTile;
 import com.android.systemui.qs.tiles.MusicTile;
 import com.android.systemui.qs.tiles.NfcTile;
 import com.android.systemui.qs.tiles.NightDisplayTile;
-<<<<<<< HEAD
-=======
 import com.android.systemui.qs.tiles.OneHandTile;
->>>>>>> ce3eb08e78a... SystemUI: OneHandMode QS tile
 import com.android.systemui.qs.tiles.ReadingModeTile;
 import com.android.systemui.qs.tiles.RebootTile;
 import com.android.systemui.qs.tiles.RotationLockTile;
@@ -160,6 +158,8 @@ public class QSFactoryImpl implements QSFactory {
                 return new AmbientDisplayTile(mHost);
             case "onehand":
                 return new OneHandTile(mHost);
+            case "cpuinfo":
+                return new CPUInfoTile(mHost);
         }
 
         // Intent tiles.
