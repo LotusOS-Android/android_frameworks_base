@@ -5977,12 +5977,6 @@ public final class Settings {
          * @hide
          */
         public static final String LOCKCLOCK_FONT_SIZE = "lockclock_font_size";
-
-        /**
-         * Whether to show the negociated charger current in the lockscreen
-         * @hide
-         */
-        public static final String LOCKSCREEN_CHARGING_CURRENT = "lockscreen_charging_current";
 		
 		/**
          * Gaming Mode master switch
