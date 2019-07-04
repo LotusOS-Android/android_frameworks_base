@@ -64,10 +64,10 @@
     <string name="animation_grow_shrink_right">Lớn lên (Phải)</string>
     <string name="action_null">Trống</string>
 	
-	<!-- FireHound Gaming -->
-    <string name="notification_channel_gaming">Chế Độ Chơi Game</string>
-    <string name="gaming_notif_title">Chơi Game được bật</string>
-    <string name="gaming_notif_ticker">Chế Độ Chơi Game đã bật</string>
-	<string name="gaming_mode_enabled_toast">Chế Độ Chơi đã kích hoạt</string>
-    <string name="gaming_mode_disabled_toast">Chế Độ Chơi ngừng kích hoạt</string>
+	<!-- Gaming mode -->
+    <string name="notification_channel_gaming">Chế độ chơi game</string>
+    <string name="gaming_mode_notification_title">Chế độ chơi game</string>
+    <string name="gaming_mode_notification_content">Chạm để tắt chế độ chơi game</string>
+    <string name="gaming_mode_enabled_toast">Chế độ chơi trò chơi đã bật</string>
+    <string name="gaming_mode_disabled_toast">Chế độ chơi trò chơi đã tắt</string>
 </resources>
