@@ -1,4 +1,5 @@
 /*
+ * Copyright (C) 2014 The Android Open Source Project
  * Copyright (C) 2019 FireHound
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,27 +21,23 @@ import android.app.ActivityManager;
 import android.content.Context;
 import android.database.ContentObserver;
 import android.os.Handler;
+import android.provider.Settings;
 import android.provider.Settings.System;
 
 import com.android.systemui.statusbar.policy.Listenable;
 
 /** Helper for managing a system setting. **/
 public abstract class SystemSetting extends ContentObserver implements Listenable {
-
     private static final int DEFAULT = 0;
 
     private final Context mContext;
     private final String mSettingName;
 
-
-     protected abstract void handleValueChanged(int value);
-	 
     private boolean mListening;
     private int mUserId;
     private int mObservedValue = DEFAULT;
 
     protected abstract void handleValueChanged(int value, boolean observedChange);
-
 
     public SystemSetting(Context context, Handler handler, String settingName) {
         super(handler);
