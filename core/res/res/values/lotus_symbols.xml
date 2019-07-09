@@ -253,7 +253,6 @@
    <java-symbol type="drawable" name="bootleg_theme_nerves_bg02" />
 
   <!-- System fonts -->
-  <java-symbol type="array" name="config_fontPackages" />
   <java-symbol type="string" name="fontservice_incompatible_font" />
   
   <!-- Smart charging battery percentage -->
