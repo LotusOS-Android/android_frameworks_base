@@ -6314,6 +6314,15 @@ public final class Settings {
          * @hide
          */
         public static final String BATTERY_ESTIMATE_POSITION = "battery_estimate_position";
+		
+        /**
+         * @hide
+         */
+        public static final String BOTTOM_GESTURE_SWIPE_START =
+                "bottom_gesture_navigation_swipe_start";
+
+        private static final Validator BOTTOM_GESTURE_SWIPE_START_VALIDATOR =
+                ANY_INTEGER_VALIDATOR;
 
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
@@ -6396,6 +6405,7 @@ public final class Settings {
             BOTTOM_GESTURE_TRIGGER_TIMEOUT,
             BOTTOM_GESTURE_SWIPE_LIMIT,
 	    BOTTOM_GESTURE_FEEDBACK_DURATION,
+            BOTTOM_GESTURE_SWIPE_START,
             DOZE_ON_CHARGE,
             STATUS_BAR_LOGO,
             QS_PANEL_BG_ALPHA,
@@ -6635,6 +6645,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(BOTTOM_GESTURE_TRIGGER_TIMEOUT);
             PRIVATE_SETTINGS.add(BOTTOM_GESTURE_SWIPE_LIMIT);
 	    PRIVATE_SETTINGS.add(BOTTOM_GESTURE_FEEDBACK_DURATION);
+            PRIVATE_SETTINGS.add(BOTTOM_GESTURE_SWIPE_START);
             PRIVATE_SETTINGS.add(DOZE_ON_CHARGE);
             PRIVATE_SETTINGS.add(QS_PANEL_BG_ALPHA);
             PRIVATE_SETTINGS.add(HIDE_LOCKSCREEN_STATUS_BAR);
@@ -6846,6 +6857,7 @@ public final class Settings {
                     USE_BOTTOM_GESTURE_NAVIGATION_VALIDATOR);
             VALIDATORS.put(BOTTOM_GESTURE_TRIGGER_TIMEOUT,
                     BOTTOM_GESTURE_TRIGGER_TIMEOUT_VALIDATOR);
+            VALIDATORS.put(BOTTOM_GESTURE_SWIPE_START, BOTTOM_GESTURE_SWIPE_START_VALIDATOR);
             VALIDATORS.put(BOTTOM_GESTURE_SWIPE_LIMIT,
                     BOTTOM_GESTURE_SWIPE_LIMIT_VALIDATOR);
             VALIDATORS.put(DOZE_ON_CHARGE, DOZE_ON_CHARGE_VALIDATOR);
