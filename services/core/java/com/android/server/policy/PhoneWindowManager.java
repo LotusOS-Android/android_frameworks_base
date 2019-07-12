@@ -9705,9 +9705,15 @@ public class PhoneWindowManager implements WindowManagerPolicy {
         final int dockedVisibility = updateLightStatusBarLw(0 /* vis */,
                 mTopDockedOpaqueWindowState, mTopDockedOpaqueOrDimmingWindowState);
         mWindowManagerFuncs.getStackBounds(
-                WINDOWING_MODE_UNDEFINED, ACTIVITY_TYPE_HOME, mNonDockedStackBounds);
-        mWindowManagerFuncs.getStackBounds(
                 WINDOWING_MODE_SPLIT_SCREEN_PRIMARY, ACTIVITY_TYPE_STANDARD, mDockedStackBounds);
+        if (mDockedStackBounds.isEmpty()) {
+            mWindowManagerFuncs.getStackBounds(WINDOWING_MODE_UNDEFINED,
+                    ACTIVITY_TYPE_HOME, mNonDockedStackBounds);
+        }
+        else {
+            mWindowManagerFuncs.getStackBounds(WINDOWING_MODE_SPLIT_SCREEN_SECONDARY,
+                    ACTIVITY_TYPE_UNDEFINED, mNonDockedStackBounds);
+        }
         final int visibility = updateSystemBarsLw(win, mLastSystemUiFlags, tmpVisibility);
         final int diff = visibility ^ mLastSystemUiFlags;
         final int fullscreenDiff = fullscreenVisibility ^ mLastFullscreenStackSysUiFlags;
