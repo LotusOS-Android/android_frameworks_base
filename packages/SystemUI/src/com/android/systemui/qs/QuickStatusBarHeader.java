@@ -226,14 +226,14 @@ public class QuickStatusBarHeader extends RelativeLayout implements
             mBatteryMeterView = null;
 
             mBatteryRemainingIcon.isQsbHeader();
-            mBatteryRemainingIcon.setShowEstimate();
+            mBatteryRemainingIcon.setShowEstimate(true);
             mBatteryRemainingIcon.setOnClickListener(this);
         } else {
             ((ViewGroup) mBatteryRemainingIcon.getParent()).removeView(mBatteryRemainingIcon);
             mBatteryRemainingIcon = null;
 
             mBatteryMeterView.isQsbHeader();
-            mBatteryMeterView.setShowEstimate();
+            mBatteryMeterView.setShowEstimate(true);
             mBatteryMeterView.setOnClickListener(this);
         }
 

@@ -5607,11 +5607,6 @@ public final class Settings {
          */
         public static final String SWITCH_STYLE = "switch_style";
 
-        /**
-         * @hide
-         */
-        public static final String SHOW_BATTERY_ESTIMATE = "show_battery_estimate";
-
        /**
 	 * Whether to enable charge battery warning
          * @hide
