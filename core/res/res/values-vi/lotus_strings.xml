@@ -4,55 +4,49 @@
     <!-- Buttons - Enable navbar (used by Settings and device parts app) -->
     <string name="disable_navkeys_title">Bật thanh điều hướng trên màn hình</string>
     <string name="disable_navkeys_summary">Bật thanh điều hướng trên màn hình và tắt các phím cứng</string>
-	
-	<!-- MicroG -->
-    <string name="permlab_fakePackageSignature">Chữ ký gói giả mạo</string>
-
+    <!-- MicroG -->
+    <string name="permlab_fakePackageSignature">Giả mạo chữ ký gói</string>
     <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-    <string name="permdesc_fakePackageSignature">Cho phép ứng dụng giả vờ là một ứng dụng khác. Các ứng dụng độc hại có thể có thể sử dụng điều này để truy cập dữ liệu ứng dụng riêng. Sử dụng hợp pháp bao gồm một trình giả lập giả vờ là những gì nó giả lập. Cấp quyền này chỉ với sự thận trọng!</string>
-
-    <!-- Ambient play -->
-    <string name="ambient_recognition_notification">Đang phát</string>
-    <string name="ambient_recognition_information">%1$s bởi %2$s</string>
+    <string name="permdesc_fakePackageSignature">Cho phép ứng dụng có thể giả mạo làm ứng dụng khác. Các ứng dụng độc hại có thể sử dụng quyền này để truy cập trái phép vào dữ liệu riêng tư của bạn. Các ứng dụng hợp pháp kèm theo phần giả lập để giả mạo thành các phần cần giả lập. Hãy thận trọng khi cấp quyền này!</string>
     <!-- Pocket Lock -->
-    <string name="pocket_lock_message_long_press">Bấm và giữ nút nguồn để mở khoá</string>
-
-	<string name="reboot_to_recovery_title" translatable="false">Phục hồi</string>
-    <string name="reboot_to_recovery_message" translatable="false">Khởi động vào chế độ phục hồi</string>
-    <string name="reboot_to_bootloader_title" translatable="false">Bootloader</string>
-    <string name="reboot_to_bootloader_message" translatable="false">Khởi động vào bootloader</string>
+    <string name="pocket_lock_message_long_press">Nhấn và giữ nút nguồn để mở khoá</string>
     <string name="reboot_title">Khởi động lại</string>
-    <string name="reboot_message">Đang khởi động hệ thống</string>
-
+    <string name="reboot_message">Đang khởi động lại hệ thống</string>
+    <!-- AOKP custom system animations -->
+    <string name="animation_fade">Mờ dần</string>
+    <string name="animation_slide_right">Trượt sang phải</string>
+    <string name="animation_slide_left">Trượt sang trái</string>
+    <string name="animation_slide_right_no_fade">Trượt sang phải (Không làm mờ)</string>
+    <string name="animation_slide_left_no_fade">Trượt sang trái (Không làm mờ)</string>
+    <string name="animation_slide_up">Trượt xuống dưới</string>
+    <string name="animation_slide_down">Trượt lên trên</string>
+    <string name="animation_default">Mặc định</string>
+    <string name="animation_translucent">Trong suốt</string>
+    <string name="animation_grow_shrink">Lớn dần (Từ trên)</string>
+    <string name="animation_grow_shrink_center">Lớn dần (Từ trung tâm)</string>
+    <string name="animation_grow_shrink_bottom">Lớn dần (Từ dưới)</string>
+    <string name="animation_grow_shrink_left">Lớn dần (Từ bên trái)</string>
+    <string name="animation_grow_shrink_right">Lớn dần (Từ bên phải)</string>
+    <string name="action_null">Trống</string>
+    <string name="animation_random">Ngẫu nhiên</string>
+    <!-- Gaming mode -->
+    <string name="notification_channel_gaming">Chế độ chơi game</string>
+    <string name="gaming_mode_notification_title">Chế độ chơi game</string>
+    <string name="gaming_mode_notification_content">Nhấn để tắt chế độ chơi game</string>
+    <string name="gaming_mode_enabled_toast">Chế độ chơi game đã bật</string>
+    <string name="gaming_mode_disabled_toast">Chế độ chơi game đã tắt</string>
+    <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permlab_toggleNavigationEditor">kiểm soát trình chỉnh sửa thanh điều hướng</string>
+    <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+    <string name="permdesc_toggleNavigationEditor">Cho phép ứng dụng kiểm soát trình chỉnh sửa thanh điều hướng.</string>
     <!-- Font service -->
     <!-- [CHAR LIMIT=NONE] Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-    <string name="permlab_accessFontManager">Địa chỉ quản lí font</string>
+    <string name="permlab_accessFontManager">truy cập trình quản lý phông chữ</string>
     <!-- [CHAR LIMIT=NONE] Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permdesc_accessFontManager">Cho phép ứng dụng truy cập trình quản lý phông chữ.</string>
     <!-- [CHAR LIMIT=NONE] Error when a package is installed but got the missing fonts.xml file, notifying the user why it isn't showing up. -->
-    <string name="fontservice_incompatible_font">Gói phông chữ bạn đã cài đặt không tương thích do thiếu phông chữ DOM trên các tệp của họ. Vui lòng liên hệ với nhà phát triển gói để được hỗ trợ.</string>
-
-     <!-- AOKP custom system animations -->
-    <string name="animation_fade">Phai màu</string>
-    <string name="animation_slide_right">Trượt sang phải</string>
-    <string name="animation_slide_left">Trượt sang trái</string>
-    <string name="animation_slide_right_no_fade">Trượt sang phải (Không phai)</string>
-    <string name="animation_slide_left_no_fade">Trượt sang trái (Không phai)</string>
-    <string name="animation_slide_up">Trượt ở phía dưới</string>
-    <string name="animation_slide_down">Trượt trên cùng</string>
-    <string name="animation_default">Mặc định</string>
-    <string name="animation_translucent">Trong suốt</string>
-    <string name="animation_grow_shrink">Phát triển trong (Hàng đầu)</string>
-    <string name="animation_grow_shrink_center">Phát triển tại (Trung tâm)</string>
-    <string name="animation_grow_shrink_bottom">Phát triển trong (Dưới cùng)</string>
-    <string name="animation_grow_shrink_left">Lớn lên (Trái)</string>
-    <string name="animation_grow_shrink_right">Lớn lên (Phải)</string>
-    <string name="action_null">Trống</string>
-	
-	<!-- Gaming mode -->
-    <string name="notification_channel_gaming">Chế độ chơi game</string>
-    <string name="gaming_mode_notification_title">Chế độ chơi game</string>
-    <string name="gaming_mode_notification_content">Chạm để tắt chế độ chơi game</string>
-    <string name="gaming_mode_enabled_toast">Chế độ chơi trò chơi đã bật</string>
-    <string name="gaming_mode_disabled_toast">Chế độ chơi trò chơi đã tắt</string>
+    <string name="fontservice_incompatible_font">Gói phông chữ bạn đã cài đặt không tương thích do thiếu fonts.xml trong tập tin. Vui lòng liên hệ với nhà phát triển gói để được hỗ trợ.</string>
+    <!-- SystemUI Restart -->
+    <string name="systemui_restart_title">Yêu cầu khởi động lại giao diện hệ thống</string>
+    <string name="systemui_restart_message">Để mọi thay đổi có hiệu lực, phải khởi động lại giao diện hệ thống. Khởi động lại bây giờ?</string>
 </resources>
