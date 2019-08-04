@@ -90,7 +90,7 @@ public class DataUsageDetailView extends LinearLayout {
                     formatDataUsage(info.usageLevel));
             bottom = res.getString(R.string.quick_settings_cellular_detail_data_limit,
                     formatDataUsage(info.limitLevel));
-            usageColor = Utils.getDefaultColor(mContext, android.R.attr.colorError);
+            usageColor = Utils.getColorAttr(mContext, android.R.attr.colorError);
         }
 
         if (usageColor == 0) {
