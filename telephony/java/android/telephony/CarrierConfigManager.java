@@ -159,6 +159,13 @@ public class CarrierConfigManager {
     public static final String
             KEY_SIM_NETWORK_UNLOCK_ALLOW_DISMISS_BOOL = "sim_network_unlock_allow_dismiss_bool";
 
+    /**
+     * Indicates if carrier supports emergency sms.
+     * @hide
+     */
+    public static final String
+            KEY_EMERGENCY_SMS_SUPPORT_BOOL = "emergency_sms_support_bool";
+
     /** Flag indicating if the phone is a world phone */
     public static final String KEY_WORLD_PHONE_BOOL = "world_phone_bool";
 
@@ -1180,6 +1187,12 @@ public class CarrierConfigManager {
      */
     public static final String KEY_SHOW_PRECISE_FAILED_CAUSE_BOOL =
             "show_precise_failed_cause_bool";
+
+    /**
+     * Flag specifying whether CDMA call waiting and call forwarding are enabled
+     * @hide
+     */
+    public static final String KEY_CDMA_CW_CF_ENABLED_BOOL = "cdma_cw_cf_enabled_bool";
 
     // These variables are used by the MMS service and exposed through another API, {@link
     // SmsManager}. The variable names and string values are copied from there.
@@ -2212,7 +2225,8 @@ public class CarrierConfigManager {
         // Marking it as metered for now can workaround the issue.
         // Todo: This will be fixed in Q when IWLAN full refactoring is completed.
         sDefaults.putStringArray(KEY_CARRIER_METERED_IWLAN_APN_TYPES_STRINGS,
-                new String[]{"default"});
+                new String[]{});
+        sDefaults.putBoolean(KEY_CDMA_CW_CF_ENABLED_BOOL, false);
 
         sDefaults.putIntArray(KEY_ONLY_SINGLE_DC_ALLOWED_INT_ARRAY,
                 new int[]{
