@@ -932,8 +932,6 @@ public class PhoneWindowManager implements WindowManagerPolicy {
     // Maps global key codes to the components that will handle them.
     private GlobalKeyManager mGlobalKeyManager;
 
-    private boolean mGlobalActionsOnLockDisable;
-
     // Fallback actions by key code.
     private final SparseArray<KeyCharacterMap.FallbackAction> mFallbackActions =
             new SparseArray<KeyCharacterMap.FallbackAction>();
@@ -1283,9 +1281,6 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                     UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.SWIPE_TO_SCREENSHOT), false, this,
-                    UserHandle.USER_ALL);
-            resolver.registerContentObserver(Settings.Secure.getUriFor(
-                    Settings.Secure.LOCK_POWER_MENU_DISABLED), false, this,
                     UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.ANSWER_VOLUME_BUTTON_BEHAVIOR_ANSWER), false, this,
@@ -1946,7 +1941,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                 behavior = LONG_PRESS_POWER_NOTHING;
             } else {
                 if (!(isKeyguardShowingAndNotOccluded() && isKeyguardSecure(mCurrentUserId) &&
-                        mGlobalActionsOnLockDisable)) {
+                        mGlobalActionsOnLockScreen)) {
                     performHapticFeedbackLw(null, HapticFeedbackConstants.LONG_PRESS, false);
                 }
                 showGlobalActionsInternal();
@@ -2254,15 +2249,10 @@ public class PhoneWindowManager implements WindowManagerPolicy {
     }
 
     void showGlobalActionsInternal() {
-        final boolean keyguardShowing = isKeyguardShowingAndNotOccluded();
-        if (keyguardShowing && isKeyguardSecure(mCurrentUserId) &&
-                mGlobalActionsOnLockDisable) {
-            return;
-        }
-
         if (mGlobalActions == null) {
             mGlobalActions = new GlobalActions(mContext, mWindowManagerFuncs);
         }
+        final boolean keyguardShowing = isKeyguardShowingAndNotOccluded();
         mGlobalActions.showDialog(keyguardShowing, isDeviceProvisioned());
         stopLongshot();
         if (keyguardShowing) {
@@ -3374,9 +3364,6 @@ public class PhoneWindowManager implements WindowManagerPolicy {
             mGlobalActionsOnLockScreen = Settings.System.getIntForUser(resolver,
                     Settings.System.LOCKSCREEN_DISABLE_POWER_MENU, 0,
                     UserHandle.USER_CURRENT) == 0;
-            mGlobalActionsOnLockDisable = Settings.Secure.getIntForUser(resolver,
-                    Settings.Secure.LOCK_POWER_MENU_DISABLED, 1,
-                    UserHandle.USER_CURRENT) != 0;
             mVolumeAnswer = (Settings.System.getIntForUser(resolver,
                     Settings.System.ANSWER_VOLUME_BUTTON_BEHAVIOR_ANSWER, 0, UserHandle.USER_CURRENT) == 1);
             mHideNotch = Settings.System.getIntForUser(resolver,
