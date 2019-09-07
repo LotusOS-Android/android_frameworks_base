@@ -162,11 +162,9 @@ public class NotificationMediaTemplateViewWrapper extends NotificationTemplateVi
                 if (mSeekBarTimer == null) {
                     if (canSeekMedia()) {
                         mSeekBar.getThumb().setAlpha(255);
-                        mSeekBar.setAlpha(255);
                         mSeekBar.setEnabled(true);
                     } else {
                         mSeekBar.getThumb().setAlpha(0);
-                        mSeekBar.setAlpha(190);
                         mSeekBar.setEnabled(false);
                     }
                     startTimer();
