@@ -1005,13 +1005,13 @@ public class Build {
      * LotusOS fingerprint
      * @hide
      */
-    public static final String PROP_LOTUS_FINGERPRINT = "ro.lotus.fingerprint";
+    public static final String PROP_FINGERPRINT = "ro.lotus.fingerprint";
 
     /**
      * LotusOS fingerprint
      * @hide
      */
-    public static final String LOTUS_FINGERPRINT = SystemProperties.get(PROP_LOTUS_FINGERPRINT,
+    public static final String FINGERPRINT = SystemProperties.get(PROP_FINGERPRINT,
             deriveFingerprint());
 
     /**
